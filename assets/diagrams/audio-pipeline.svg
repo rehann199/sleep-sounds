@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="t d">
+  <title id="t">Sleep Sounds audio pipeline</title>
+  <desc id="d">Eight stages from tapping a sound to audio playing. A tap passes an entitlement check, then a source choice between a cached local file and a network stream that also fills the cache. A single audio player is supervised by an audio session that pauses and resumes on interruptions, a foreground media service with a notification, and a sleep timer that fades and stops playback. Preferences and a bedtime reminder sit underneath.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e8ebff; }
+      .h { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 700; }
+      .s { font-size: 15px; fill: #a9b0dd; }
+      .k { font-size: 12px; font-weight: 700; letter-spacing: 1.6px; fill: #a9b0dd; }
+      .t { font-size: 16px; font-weight: 700; }
+      .b { font-size: 14px; fill: #cdd2f5; }
+      .l { font-size: 13px; fill: #a9b0dd; font-style: italic; }
+      .box { fill: #14233f; stroke: #5a67c9; stroke-width: 1.6; }
+      .core { fill: #1c2c55; stroke: #9a97ff; stroke-width: 2; }
+      .store { fill: #12302f; stroke: #43b5a6; stroke-width: 1.6; }
+      .line { stroke: #9a97ff; stroke-width: 2; fill: none; }
+      .dash { stroke: #43b5a6; stroke-width: 2; fill: none; stroke-dasharray: 7 6; }
+    </style>
+    <marker id="ar" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9a97ff"/>
+    </marker>
+    <marker id="at" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#43b5a6"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="640" rx="18" fill="#0b1730"/>
+  <text x="40" y="52" class="h">From tap to speaker</text>
+  <text x="40" y="78" class="s">One sound plays at a time. Cached files are preferred; the network is the fallback and fills the cache.</text>
+
+  <text x="40" y="112" class="k">RESOLVE</text>
+
+  <rect x="40" y="124" width="258" height="124" rx="12" class="box"/>
+  <text x="60" y="152" class="t">1  Tap a sound</text>
+  <text x="60" y="178" class="b">Row, card, favourite, bedtime-</text>
+  <text x="60" y="198" class="b">reminder tap or the player's</text>
+  <text x="60" y="218" class="b">previous and next buttons</text>
+
+  <rect x="330" y="124" width="258" height="124" rx="12" class="box"/>
+  <text x="350" y="152" class="t">2  Entitlement check</text>
+  <text x="350" y="178" class="b">Free sound, time-limited</text>
+  <text x="350" y="198" class="b">rewarded unlock, or Premium.</text>
+  <text x="350" y="218" class="b">Otherwise: the unlock sheet</text>
+
+  <rect x="620" y="124" width="258" height="124" rx="12" class="box"/>
+  <text x="640" y="152" class="t">3  Choose a source</text>
+  <text x="640" y="178" class="b">Cached file on disk when it</text>
+  <text x="640" y="198" class="b">exists; otherwise a network</text>
+  <text x="640" y="218" class="b">connection is required</text>
+
+  <rect x="910" y="124" width="258" height="124" rx="12" class="store"/>
+  <text x="930" y="152" class="t">4  Stream and cache</text>
+  <text x="930" y="178" class="b">Streams from remote object</text>
+  <text x="930" y="198" class="b">storage and saves the file</text>
+  <text x="930" y="218" class="b">for offline use next time</text>
+
+  <path d="M298 186 H326" class="line" marker-end="url(#ar)"/>
+  <path d="M588 186 H616" class="line" marker-end="url(#ar)"/>
+  <path d="M878 186 H906" class="line" marker-end="url(#ar)"/>
+
+  <path d="M1039 248 V276 H270 V304" class="line" marker-end="url(#ar)"/>
+  <text x="650" y="270" class="l" text-anchor="middle">source handed to the player with title and category metadata</text>
+
+  <text x="40" y="296" class="k">PLAYBACK RUNTIME</text>
+
+  <rect x="40" y="308" width="258" height="130" rx="12" class="core"/>
+  <text x="60" y="336" class="t">5  Single audio player</text>
+  <text x="60" y="362" class="b">One source at a time, with</text>
+  <text x="60" y="382" class="b">repeat-one or auto-advance.</text>
+  <text x="60" y="402" class="b">User volume is applied here.</text>
+
+  <rect x="330" y="308" width="258" height="130" rx="12" class="box"/>
+  <text x="350" y="336" class="t">6  Audio session</text>
+  <text x="350" y="362" class="b">Music profile. A pausing</text>
+  <text x="350" y="382" class="b">interruption pauses playback;</text>
+  <text x="350" y="402" class="b">its end resumes it.</text>
+
+  <rect x="620" y="308" width="258" height="130" rx="12" class="box"/>
+  <text x="640" y="336" class="t">7  Background service</text>
+  <text x="640" y="362" class="b">Media-playback foreground</text>
+  <text x="640" y="382" class="b">service plus a media</text>
+  <text x="640" y="402" class="b">notification with controls</text>
+
+  <rect x="910" y="308" width="258" height="130" rx="12" class="box"/>
+  <text x="930" y="336" class="t">8  Sleep timer</text>
+  <text x="930" y="362" class="b">Counts down only while audio</text>
+  <text x="930" y="382" class="b">plays. Optional fade-out near</text>
+  <text x="930" y="402" class="b">the end, then the player stops</text>
+
+  <path d="M1039 438 V470 H169 V442" class="dash" marker-end="url(#at)"/>
+  <text x="604" y="464" class="l" text-anchor="middle">timer scales the volume, then stops playback</text>
+
+  <text x="40" y="508" class="k">ON-DEVICE STATE</text>
+
+  <rect x="40" y="520" width="600" height="92" rx="12" class="store"/>
+  <text x="60" y="548" class="t">Preferences store</text>
+  <text x="60" y="574" class="b">Last sound, favourites, volume, repeat choice per sound, default timer,</text>
+  <text x="60" y="594" class="b">fade-out switch and the bedtime reminder schedule</text>
+
+  <rect x="668" y="520" width="500" height="92" rx="12" class="box"/>
+  <text x="688" y="548" class="t">Bedtime reminder</text>
+  <text x="688" y="574" class="b">A locally scheduled notification. Tapping it starts the first</text>
+  <text x="688" y="594" class="b">favourite (or the last sound) and re-enters step 1</text>
+
+</svg>
